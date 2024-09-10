@@ -1,0 +1,33 @@
+﻿@model WebTask.Models.ShopperItemViewModel
+
+@{
+    ViewData["Title"] = "Add Item to Shopper List";
+}
+
+<h2>Add Item to Shopper's List</h2>
+
+<!-- Display Status Message -->
+
+
+
+<form asp-action="AddItem" method="post">
+    <div class="form-group">
+        <label for="shopper">Select Shopper:</label>
+        <select asp-for="SelectedShopperId" class="form-control" asp-items="@(new SelectList(Model.Shoppers, "Id", "Name"))">
+            <option value="">-- Select Shopper --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="item">Select Item:</label>
+        <select asp-for="SelectedItemId" class="form-control" asp-items="@(new SelectList(Model.ShoppingItems.DistinctBy(item => item.Name), "Id", "Name"))">
+            <option value="">-- Select Item --</option>
+        </select>
+    </div>
+
+    <div class="text-danger">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Item to List</button>
+</form>

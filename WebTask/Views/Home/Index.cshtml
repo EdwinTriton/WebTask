@@ -1,0 +1,54 @@
+﻿@model WebTask.Models.HomePageViewModel
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h2>Shoppers and Their Shopping List</h2>
+    @if (Model.Shoppers != null && Model.Shoppers.Any())
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Shopper Name</th>
+                    <th>Shopping Items</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var shopper in Model.Shoppers)
+                {
+                    <tr>
+                        <td>@shopper.Name</td>
+                        <td>
+                            @if (shopper.ShoppingItems != null && shopper.ShoppingItems.Any())
+                            {
+                                <ul class="list-group">
+                                    @foreach (var item in shopper.ShoppingItems)
+                                    {
+                                        <form asp-controller="Shopper" form asp-action="DeleteItem" asp-route-itemId="@item.Id" method="post">
+                                            <div class="form-group">
+                                                <label>@item.Name</label>
+                                                <input type="hidden"  value="@item.Id" />  <button type="submit" class="btn btn-danger">Delete</button>
+                                            </div>
+                                        </form>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>No items for this shopper.</p>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No shoppers found.</p>
+    }
+    <a href="/Shopper/AddItem" class="btn btn-success">Add to shopping list</a>
+</div>
