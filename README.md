@@ -25,5 +25,6 @@ Getting Started
    
 
 Using the application:
+
 To create a Shopping List select a shopper from the dropdown list and choose items to add to the shopper's list, then click  "Add Item" to save to the shopping list. You can delete items from shoppers shopping lists by pressing on the delete button.
 
