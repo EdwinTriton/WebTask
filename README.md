@@ -14,7 +14,7 @@ Technologies Used
 Getting Started
 
 1. Clone the Repository
-   git clone https://github.com/yourusername/shopping-list-app.git
+   git clone https://github.com/EdwinTriton/WebTask.git
    cd shopping-list-app
    Open the project in Visual Studio or run the following command to restore the required packages:
 
