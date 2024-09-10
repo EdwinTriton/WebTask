@@ -15,11 +15,11 @@ Getting Started
 
 1. Clone the Repository and run the following commands:
    
-   git clone https://github.com/EdwinTriton/WebTask.git
+   ``git clone https://github.com/EdwinTriton/WebTask.git``
    
-   cd shopping-list-app
+   ``cd shopping-list-app``
    
-   dotnet restore
+   ``dotnet restore``
 
 2. Running the Application
     
