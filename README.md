@@ -13,15 +13,17 @@ Technologies Used
 
 Getting Started
 
-1. Clone the Repository
+1. Clone the Repository and run the following commands:
+   
    git clone https://github.com/EdwinTriton/WebTask.git
+   
    cd shopping-list-app
-   Open the project in Visual Studio or run the following command to restore the required packages:
+   
+   dotnet restore
 
-3. Build and Run the Application
-   Build and run the application using:
-   dotnet run
-   Navigate to https://localhost:7113 in your web browser to access the application.
+2. Running the Application
+    
+   Build and run the application using dotnet run then navigate to https://localhost:7113 in your web browser to access the application.
    
 
 Using the application:
